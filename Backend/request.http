@@ -1,0 +1,39 @@
+###
+post http://localhost:5000/admin-api/new-admin
+Content-Type: application/json
+
+{
+    "adminId":"003",
+    "username":"DedeepyaV",
+    "password":"Dedeepya@123",
+    "email":"dedeepya1611@gmail.com",
+    "phone":"9866729852"
+}
+
+###
+post http://localhost:5000/admin-api/login
+Content-Type: application/json
+
+{
+    "adminId":"002",
+    "password":"Dedeepya$123"
+}
+
+###
+POST http://localhost:5000/admin-api/workshopdata
+Content-Type: application/json
+
+{
+    "workshopId":"{{$timestamp}}",
+    "title":"Blockchain Revolution",
+    "topic":"Blockchain technology,cryptography",
+    "startDate":"2023-01-20",
+    "endDate":"2023-01-20",
+    "organizedBy":"VNRVJIET",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "status":true
+}
+###
+// get sdp data
+GET http://localhost:5000/admin-api/workshopdata/1719337887

@@ -1,0 +1,118 @@
+/* NavBar.css */
+.navbar {
+    background: #333;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-logo:hover {
+    color: #f39c12;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin-right: -22px;
+  }
+  
+  .nav-item {
+    height: 60px;
+  }
+  
+  .nav-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .nav-links:hover {
+    background-color: #4a4741;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .navbar-container {
+      padding: 0 20px;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: -100%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      background: #333;
+    }
+  
+    .nav-menu.active {
+      background: #333;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+  
+    .nav-item {
+      width: 100%;
+    }
+  
+    .nav-links {
+      text-align: center;
+      padding: 1.5rem;
+      width: 100%;
+      display: table;
+    }
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 50%);
+      font-size: 1.5rem;
+      cursor: pointer;
+      /* color: #fff; */
+    }
+  }
+  
