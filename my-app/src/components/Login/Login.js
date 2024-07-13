@@ -1,59 +1,69 @@
-import React from 'react'
-import './Login.css'
-import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { workshopManagementLoginThunk } from '../../redux/slice/workshopManagamentSlice';
-import { useNavigate } from 'react-router'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-// import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import './Login.css';
+
 function Login() {
-    let navigate = useNavigate()
-    let dispatch = useDispatch()
-    let { register, handleSubmit, formState: { errors } } = useForm()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-    let { loginUserStatus, currentUser, errorOccured, errMsg } = useSelector(state => state.workshopManagementLoginReducer)
+    const { loginUserStatus = false, currentUser, errorOccured, errMsg } = useSelector((state) => state.workshopManagementLoginReducer) || {};
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
     const login = async (user) => {
-        console.log(user)
-        dispatch(workshopManagementLoginThunk(user))
-    }
+        console.log(user);
+        dispatch(workshopManagementLoginThunk(user));
+    };
+
     useEffect(() => {
-
-        if (loginUserStatus === true) {
-            navigate('/workshop')
+        if (loginUserStatus) {
+            navigate('/Admin');
         }
-    }, [loginUserStatus])
+    }, [loginUserStatus, navigate]);
+
     return (
-        <div className="signinmain mt-5 mx-auto">
-
-            <form className="mx-auto p-4 pt-3 bg-light formmain rounded" onSubmit={handleSubmit(login)}>
-                <div className="adid m-2 p-3 ">
-
-                    <input type="text" id="adid" className="form-control w-75 mx-auto" placeholder='adminId'{...register("adminId", { required: true })} />
-
-                </div>
-                <div className="password m-2 p-3">
-                    <div className="position-relative  d-flex mx-auto w-75 pass-wrapper">
-                        <input type={showPassword ? 'text' : 'password'} id="pass" className="form-control w-100" placeholder='password'{...register("password", { required: true })} />
-                        <i onClick={togglePasswordVisibility} className="flex justify-around items-center">
-                            {showPassword ? 'Yes' : 'No'}
-                        </i>
-
+        <div className="login-container">
+            <div className="card p-4 login-card">
+                <h2 className="card-title text-center mb-4">Login</h2>
+                <form onSubmit={handleSubmit(login)}>
+                    <div className="mb-3">
+                        <label htmlFor="facultyId" className="form-label">Admin</label>
+                        <input
+                            type="text"
+                            id="facultyId"
+                            className="form-control"
+                            placeholder="Faculty ID"
+                            {...register("facultyId", { required: true })}
+                        />
+                        {errors.facultyId && <div className="text-danger">Admin ID is required</div>}
                     </div>
-                    {errors.password?.type === "required" &&
-                        (<p className="text-danger">Required</p>)}
-
-                </div>
-                <button className="btn button-reg  mx-auto d-block" style={{ backgroundColor: "var(--main-yellow)" }}>Login</button>
-            </form>
-
+                    <div className="mb-3 position-relative">
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            id="password"
+                            className="form-control"
+                            placeholder="Password"
+                            {...register("password", { required: true })}
+                        />
+                        <span onClick={togglePasswordVisibility} className="position-absolute top-50 end-0 translate-middle-y me-2" style={{ cursor: 'pointer' }}>
+                            {showPassword ? <FaEye /> : <FaEyeSlash />}
+                        </span>
+                        {errors.password && <div className="text-danger">Password is required</div>}
+                    </div>
+                    <button type="submit" className="btn btn-primary w-100">Login</button>
+                    {errMsg && <div className="text-danger text-center mt-3">{errMsg}</div>}
+                </form>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;

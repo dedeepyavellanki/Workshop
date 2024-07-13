@@ -1,0 +1,42 @@
+.dashboard {
+    padding: 20px;
+    background-color: #caa4f1;
+    min-height: 100vh;
+  }
+  .workshop-details{
+    padding: 20px;
+    background-color: #caa4f1;
+    min-height: 100vh;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .card p {
+    color: #666666;
+  }
+  .custom-button {
+    background-color: #d6b7f9; /* Equivalent to $purple-100 in Bootstrap */
+    color: white;
+    border: none;
+  }
+  
+  .custom-button:hover {
+    background-color: #bd9bed; /* Slightly darker for hover effect */
+  }

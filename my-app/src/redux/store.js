@@ -1,9 +1,14 @@
-// Redux/Store.js
-import { configureStore } from '@reduxjs/toolkit';
-import workshopManagementReducer from '../redux/slice/workshopManagamentSlice';
+// src/redux/store.js
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import {thunk} from 'redux-thunk';
+import userReducer from './slice/workshopManagamentSlice';
+import workshopManagementLoginReducer from './slice/workshopManagamentSlice';
 
-export const store = configureStore({
-    reducer: {
-        workshopManagementLoginReducer: workshopManagementReducer,
-    },
+const rootReducer = combineReducers({
+    user: userReducer,
+    workshopManagementLoginReducer: workshopManagementLoginReducer,
 });
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+export default store;

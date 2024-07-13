@@ -1,27 +1,74 @@
-import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Statistics from './components/Statistics';
-import Repository from './components/Repository';
-import Workshops from './components/workshops/Workshops';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RootLayout from './components/RootLayout/RootLayout';
+import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
-import NavBar from './components/navbar/NavBar'; // Import the NavBar component
+import Profile from './components/Profile/Profile';
+import Admin from './components/admin/Admin';
+import Summary from './components/Summary/Summary';
+import Workshops from './components/workshops/Workshops';
+import Upload from './components/Upload/Upload';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import DashboardId from './components/Dashboard/DashboardId';
+import RedirectToDashboard from './components/Dashboard/RedirectToDashboard';
 
 function App() {
+  let router = createBrowserRouter([
+    {
+      path: '',
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '',
+          element: <Dashboard /> // Redirect to Dashboard by default after login
+        },
+        {
+          path: 'login',
+          element: <Login />
+        },
+        {
+          path: 'admin',
+          element: <Admin />,
+          children: [
+            {
+              path: '',
+              element: <RedirectToDashboard />
+            },
+            {
+              path: 'Dashboard',
+              element: <Dashboard />,
+            },
+            {
+              path: 'Dashboard/:id',
+              element: <DashboardId />
+            },
+            {
+              path: 'profile',
+              element: <Profile />
+            },
+            {
+              path: 'view-all-workshops',
+              element: <Workshops />
+            },
+            {
+              path: 'view-all-summary',
+              element: <Summary />
+            },
+            {
+              path: 'upload-new-workshop',
+              element: <Upload />
+            },
+          ]
+        }
+      ]
+    }
+  ]);
+
   return (
-    <Router>
-      <NavBar /> {/* Add the NavBar component here */}
-      <div className="App">
-        <header className="App-header">
-        </header>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/statistics" element={<Statistics />} />
-          <Route path="/repository" element={<Repository />} />
-          <Route path="/workshops" element={<Workshops />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 

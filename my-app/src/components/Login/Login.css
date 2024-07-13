@@ -1,21 +1,101 @@
-/* .login {
-  width: 400px;
-  background: #fff;
-  border: 1px solid #dddfe2;
-  box-shadow: 0 2px 4px rgb(0 0 10 / 64%), 0 8px 16px rgb(0 10 0 / 34%);
-  border-radius: 8px;
-  padding: 1rem;
-  align-items: center;
-  text-align: center;
+.radiobut {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0; /* Added padding for better spacing */
 }
 
-.login > form input {
-  border-radius: 20px;
-  border: 2px solid lightgrey;
-  outline: none;
-  color: #1d2129;
-  margin: 2% 0;
-  width: 90%;
-  padding: 12px;
-  font-size: 16px;
-} */
+input[type="radio"] {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20200701/ourmid/pngtree-original-design-business-office-management-system-background-banner-image_346107.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.signinmain {
+  width: 25%;
+  min-width: 300px; /* Ensures the form does not get too narrow on small screens */
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle box shadow */
+  border-radius: 0.5rem; /* Added border-radius for rounded corners */
+  margin: 0 auto; /* Center the form */
+}
+
+.formmain {
+  margin-top: 12em;
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+}
+
+.button-reg {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  color: white;
+  background: linear-gradient(to top, #257df8, #388cff, #2e86ff, #2380ff, #1775f0);
+  border: none;
+  border-radius: 0.75em; /* Adjusted border-radius for responsiveness */
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjusted box-shadow for responsiveness */
+  padding: 0.75em 1.5em; /* Added padding for better spacing */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-reg:hover {
+  transform: translateY(-0.1em); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.pass-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.pass-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer; /* Added cursor pointer for icon */
+}
+
+@media (max-width: 768px) {
+  .button-reg {
+      padding: 0.5em 1em; /* Adjusted padding for smaller screens */
+      font-size: 0.875em; /* Adjusted font-size for smaller screens */
+  }
+
+  .signinmain {
+      width: 80%; /* Adjusted width for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .button-reg {
+      padding: 0.375em 0.75em; /* Further adjusted padding for even smaller screens */
+      font-size: 0.75em; /* Further adjusted font-size for even smaller screens */
+  }
+
+  .signinmain {
+      width: 90%; /* Adjusted width for small screens */
+  }
+}
