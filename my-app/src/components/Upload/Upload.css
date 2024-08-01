@@ -1,5 +1,5 @@
 .upsmain {
-    background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
+    background-image: url('https://img.freepik.com/premium-photo/fluid-waves-abstract-geometric-image-texture-pattern-background-wallpaper-smartphone-cover_867671-5580.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -13,8 +13,6 @@
     min-width: 300px;
     padding: 20px 30px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Optional: blur effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }

@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
+    background-image: url('https://img.freepik.com/premium-photo/fluid-waves-abstract-geometric-image-texture-pattern-background-wallpaper-smartphone-cover_867671-5580.jpg');
     overflow-x: hidden;
     transition: width 0.3s;
     display: flex;
@@ -62,21 +62,5 @@
     color: #1E90FF;
   }
   
-  .profile-button {
-    color: #090909;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    transition: background-color 0.3s;
-  }
-  
-  .profile-button .nav-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 8px 16px;
-  }
   
   

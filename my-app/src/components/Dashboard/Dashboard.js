@@ -43,12 +43,12 @@ function Dashboard() {
       <h1>Workshop Dashboard</h1>
       <div className="card-container">
         {sampleWorkshops.map(workshop => (
-          <div key={workshop.id} className="card">
+          <div key={workshop.id} className="d-card">
             <h2>{workshop.title}</h2>
             <p>{workshop.description}</p>
             <p><strong>Date:</strong> {workshop.date}</p>
             <p><strong>Location:</strong> {workshop.location}</p>
-            <button onClick={() => handleViewDetails(workshop.id)}>View</button>
+            <button className="btn custom-button1 mr-4 align-center" onClick={() => handleViewDetails(workshop.id)}>View</button>
           </div>
         ))}
             <Outlet />

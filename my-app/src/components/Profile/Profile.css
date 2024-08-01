@@ -6,15 +6,9 @@
     align-items: center;
     width: 100%;
     margin-top: 7em;
-    color: bisque;
 }
 
 .profile-card {
-    background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color:bisque;
     padding: 30px 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -29,9 +23,9 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
+h1 {
     margin-bottom: 20px;
-    color: #333333;
+    color: #0a0a0a;
     font-size: 24px;
 }
 

@@ -15,12 +15,12 @@ function Profile() {
     return (
         <div className="profile-container">
             <div className="profile-card">
-                <h2>Profile</h2>
+                <h1>Profile</h1>
                 <div className="profile-info">
                     <p><strong>Admin Name:</strong> {currentUser.username}</p>
                     <p><strong>Admin ID:</strong> {currentUser.facultyId}</p>
                     <p><strong>Email:</strong> {currentUser.email}</p>
-                    <p className='text-white'><strong>Phone Number:</strong> {phn}</p>
+                    <p><strong>Phone Number:</strong> {phn}</p>
                 </div>
                 <button className="manage-password-button" onClick={manage}>Manage Password</button>
             </div>
@@ -28,4 +28,4 @@ function Profile() {
     )
 }
 
-export default Profile
+export default Profile;

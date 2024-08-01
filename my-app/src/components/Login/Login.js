@@ -30,8 +30,8 @@ function Login() {
 
     return (
         <div className="login-container">
-            <div className="card p-4 login-card">
-                <h2 className="card-title text-center mb-4">Login</h2>
+            <div className="p-4 login-card">
+                <h1 className="card-title text-center mb-4">Login</h1>
                 <form onSubmit={handleSubmit(login)}>
                     <div className="mb-3">
                         <label htmlFor="facultyId" className="form-label text-black">Admin</label>

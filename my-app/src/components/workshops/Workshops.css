@@ -1,5 +1,5 @@
 .filbut {
-    color: white;
+    color: rgb(17, 16, 16);
     border: none;
     border-radius: 0.75em; /* Adjusted border-radius for responsiveness */
     text-transform: uppercase;
@@ -18,8 +18,6 @@
   }
   
   .table {
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Optional: blur effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
   }

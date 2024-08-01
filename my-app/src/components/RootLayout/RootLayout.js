@@ -41,9 +41,9 @@ function RootLayout() {
               <FaBars />
             </div>
             <div className='text-center mt-2'>
-                <h1>
-                    Workshop Management Module
-                </h1>
+                <h2><b>
+                    Workshop Management Module</b>
+                </h2>
                 </div>
             <button className="logout-button" onClick={signOut}>
               <FaSignOutAlt />

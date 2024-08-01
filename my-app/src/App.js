@@ -11,6 +11,7 @@ import Upload from './components/Upload/Upload';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import DashboardId from './components/Dashboard/DashboardId';
 import RedirectToDashboard from './components/Dashboard/RedirectToDashboard';
+import ManagePassword from './components/ManagePassword/ManagePassword';
 
 function App() {
   let router = createBrowserRouter([
@@ -46,6 +47,10 @@ function App() {
             {
               path: 'profile',
               element: <Profile />
+            },
+            {
+              path: 'profile/manage-password',
+              element: <ManagePassword />
             },
             {
               path: 'view-all-workshops',

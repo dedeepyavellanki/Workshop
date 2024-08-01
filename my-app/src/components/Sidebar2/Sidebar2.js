@@ -54,11 +54,11 @@ function Sidebar2({ isOpen, toggleSidebar }) {
                             Summary
                         </NavLink>
                     </li>
+                    <li>
+                    <NavLink to="admin/profile" className="nav-link">Profile</NavLink>
+                    </li>
                 </ul>
             </nav>
-            <button className="profile-button">
-                <NavLink to="admin/profile" className="nav-link">Profile</NavLink>
-            </button>
         </div>
     )
 }

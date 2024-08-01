@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
+  background-image: url('https://img.freepik.com/premium-photo/fluid-waves-abstract-geometric-image-texture-pattern-background-wallpaper-smartphone-cover_867671-5580.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -75,8 +75,6 @@ body {
   width: calc(33.333% - 20px);
   box-sizing: border-box;
   color: rgb(7, 7, 7);
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Optional: blur effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -86,8 +84,9 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card h2 {
+.card h1 {
   margin-top: 0;
+  size: 4px;
   color: rgb(4, 5, 5);
 }
 
@@ -106,7 +105,7 @@ body {
 }
 
 .custom-button:hover {
-  background-color: #e8d8f9; /* Slightly darker for hover effect */
+  background-color: #f6f4f9; /* Slightly darker for hover effect */
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

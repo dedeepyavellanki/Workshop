@@ -1,6 +1,6 @@
 .filbut{
-    color: white;
-    background-color: #caa4f1;
+    color: rgb(20, 20, 20);
+    background-color: #f0eef3;
     border: none;
     border-radius: 0.75em; /* Adjusted border-radius for responsiveness */
     text-transform: uppercase;
@@ -15,6 +15,6 @@
 }
 
 .transparent-arrow {
-    opacity: 0.3; /* Adjust the opacity value as needed */
+    opacity: 0.1; /* Adjust the opacity value as needed */
   }
   
