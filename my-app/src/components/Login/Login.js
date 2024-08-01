@@ -34,7 +34,7 @@ function Login() {
                 <h2 className="card-title text-center mb-4">Login</h2>
                 <form onSubmit={handleSubmit(login)}>
                     <div className="mb-3">
-                        <label htmlFor="facultyId" className="form-label">Admin</label>
+                        <label htmlFor="facultyId" className="form-label text-black">Admin</label>
                         <input
                             type="text"
                             id="facultyId"
@@ -45,7 +45,7 @@ function Login() {
                         {errors.facultyId && <div className="text-danger">Admin ID is required</div>}
                     </div>
                     <div className="mb-3 position-relative">
-                        <label htmlFor="password" className="form-label">Password</label>
+                        <label htmlFor="password" className="form-label text-black">Password</label>
                         <input
                             type={showPassword ? 'text' : 'password'}
                             id="password"
@@ -53,8 +53,8 @@ function Login() {
                             placeholder="Password"
                             {...register("password", { required: true })}
                         />
-                        <span onClick={togglePasswordVisibility} className="position-absolute top-50 end-0 translate-middle-y me-2" style={{ cursor: 'pointer' }}>
-                            {showPassword ? <FaEye /> : <FaEyeSlash />}
+                        <span onClick={togglePasswordVisibility} className="position-absolute top-50 end-0 translate-middle-y mt-3 mr-4" style={{ cursor: 'pointer', padding: '3px' }}>
+                            {showPassword ? <FaEye style={{ color: 'black' }} /> : <FaEyeSlash style={{ color: 'black' }} />}
                         </span>
                         {errors.password && <div className="text-danger">Password is required</div>}
                     </div>

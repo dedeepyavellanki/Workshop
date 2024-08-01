@@ -40,6 +40,11 @@ function RootLayout() {
             <div className="open-sidebar-button toggle-button" onClick={toggleSidebar}>
               <FaBars />
             </div>
+            <div className='text-center mt-2'>
+                <h1>
+                    Workshop Management Module
+                </h1>
+                </div>
             <button className="logout-button" onClick={signOut}>
               <FaSignOutAlt />
               <span> </span>Logout

@@ -52,12 +52,12 @@ function Upload() {
     };
 
     return (
-        <div>
-            <div className="m-3">
-                <h2 className="d-block m-4 mx-auto text-center">Upload Data</h2>
+        <div style={{backgroundImage:'https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg'}}>
+            <div className="m-3 p-3 d-block text-center">
+                <h3 ><strong>Upload Data</strong></h3>
             </div>
-            <div className="upsmain mt-5 mx-auto">
-                <form className="bg-light sdpForm mx-auto p-4 pt-3 rounded" onSubmit={handleSubmit(onSubmit)}>
+            <div className="upsmain mt-5 mx-auto" >
+                <form className="bg-purple sdpForm mx-auto p-4 pt-3 rounded" style={{backgroundCImage:'https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg'}} onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
                         <input
@@ -67,16 +67,6 @@ function Upload() {
                             className="form-control w-100"
                         />
                         {errors.title && <span className="error">Title is required</span>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic">Topic</label>
-                        <input
-                            type="text"
-                            id="topic"
-                            {...register('topic', { required: true })}
-                            className="form-control w-100"
-                        />
-                        {errors.topic && <span className="error">Topic is required</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="start-date">Start Date</label>
@@ -109,7 +99,7 @@ function Upload() {
                         {errors.organizedBy && <span className="error">Organizer is required</span>}
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
@@ -117,16 +107,6 @@ function Upload() {
                             className="form-control w-100"
                         />
                         {errors.researcherName && <span className="error text-danger">Researcher is required</span>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
-                            {...register('topicName', { required: true })}
-                            className="form-control w-100"
-                        />
-                        {errors.topicName && <span className="error text-danger">Topic is required</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="topic-delivered">Topic Delivered</label>
@@ -172,7 +152,7 @@ function Upload() {
                         {errors.timePeriod && <span className="error text-danger">Time period is required</span>}
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
@@ -180,16 +160,6 @@ function Upload() {
                             className="form-control w-100"
                         />
                         {errors.researcherName && <span className="error text-danger">Researcher is required</span>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
-                            {...register('topicName', { required: true })}
-                            className="form-control w-100"
-                        />
-                        {errors.topicName && <span className="error text-danger">Topic is required</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="topic-delivered">Topic Delivered</label>
@@ -235,18 +205,10 @@ function Upload() {
                         {errors.timePeriod && <span className="error text-danger">Time period is required</span>}
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -287,18 +249,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -339,18 +293,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -391,18 +337,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -443,18 +381,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -495,18 +425,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -547,18 +469,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -599,18 +513,10 @@ function Upload() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="researcher-name">Researcher Name</label>
+                        <label htmlFor="researcher-name">Resource Person Name</label>
                         <input
                             type="text"
                             id="researcher-name"
-                            className="form-control w-100"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="topic-name">Topic Name</label>
-                        <input
-                            type="text"
-                            id="topic-name"
                             className="form-control w-100"
                         />
                     </div>
@@ -660,7 +566,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="broacher">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -673,7 +578,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="letter">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -686,7 +590,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="schedule">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -699,7 +602,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="profiles">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -712,7 +614,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="certificate">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -725,7 +626,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="forms">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -738,7 +638,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="sheets">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -751,7 +650,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="report">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -764,7 +662,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="summary">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -777,7 +674,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="feedback">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -790,7 +686,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="photos">Upload</label>
                         </div>
                     </div> }
                     {<div className="form-group">
@@ -803,7 +698,6 @@ function Upload() {
                                 {...register('file')}
                                 className="form-control w-40"
                             />
-                            <label className="input-group-text" htmlFor="certificate">Upload</label>
                         </div>
                     </div> }
                     <div className="form-group text-center">

@@ -24,6 +24,14 @@ function Sidebar2({ isOpen, toggleSidebar }) {
                     </li>
                     <li>
                         <NavLink
+                            to="admin/Dashboard"
+                            className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
                             to="admin/view-all-workshops"
                             className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}
                         >

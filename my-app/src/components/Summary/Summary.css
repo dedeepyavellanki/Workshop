@@ -1,6 +1,6 @@
 .filbut{
     color: white;
-    background: linear-gradient(to top, #257df8, #388cff, #2e86ff, #2380ff, #1775f0);
+    background-color: #caa4f1;
     border: none;
     border-radius: 0.75em; /* Adjusted border-radius for responsiveness */
     text-transform: uppercase;

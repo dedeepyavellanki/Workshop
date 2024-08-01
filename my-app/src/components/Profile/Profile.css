@@ -6,10 +6,15 @@
     align-items: center;
     width: 100%;
     margin-top: 7em;
+    color: bisque;
 }
 
 .profile-card {
-    background: linear-gradient(135deg, #add8e6, #87ceeb);
+    background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:bisque;
     padding: 30px 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -33,12 +38,13 @@ h2 {
 .profile-info {
     text-align: left;
     margin-bottom: 30px;
+    color: #0c0c0c;
 }
 
 .profile-info p {
     margin: 10px 0;
     font-size: 18px;
-    color: #555555;
+    color: #0e0e0e;
 }
 
 .manage-password-button {

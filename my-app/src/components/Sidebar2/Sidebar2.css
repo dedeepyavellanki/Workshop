@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-image: url('https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg');
     overflow-x: hidden;
     transition: width 0.3s;
     display: flex;
@@ -23,8 +23,7 @@
   }
   
   .close-icon {
-    background-color: #111;
-    color: #fff;
+    color: #121111;
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
@@ -34,7 +33,7 @@
   }
   
   .close-icon:hover {
-    color: #ccc; /* Change the color on hover if desired */
+    color: #0b0a0a; /* Change the color on hover if desired */
   }
   
   .sidebar nav ul {
@@ -48,7 +47,7 @@
   }
   
   .sidebar nav ul li a {
-    color: #818181;
+    color: #0e0e0e;
     text-decoration: none;
     font-size: 18px;
     display: block;
@@ -56,7 +55,7 @@
   }
   
   .sidebar nav ul li a:hover {
-    color: #f1f1f1;
+    color: #393939;
   }
   
   .sidebar nav ul li a.active-link {
@@ -64,18 +63,13 @@
   }
   
   .profile-button {
-    background-color: #111;
-    color: #fff;
+    color: #090909;
     border: none;
     padding: 10px;
     cursor: pointer;
     text-align: left;
     width: 100%;
     transition: background-color 0.3s;
-  }
-  
-  .profile-button:hover {
-    background-color: #575757;
   }
   
   .profile-button .nav-link {
@@ -85,7 +79,4 @@
     padding: 8px 16px;
   }
   
-  .profile-button .nav-link:hover {
-    color: #f1f1f1;
-  }
   

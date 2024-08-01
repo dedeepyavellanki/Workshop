@@ -1,20 +1,45 @@
-.filbut{
+.filbut {
     color: white;
-    background: linear-gradient(to top, #257df8, #388cff, #2e86ff, #2380ff, #1775f0);
     border: none;
     border-radius: 0.75em; /* Adjusted border-radius for responsiveness */
     text-transform: uppercase;
     cursor: pointer;
     box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Adjusted box-shadow for responsiveness */
     transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.datebar{
+  }
+  
+  .datebar {
     width: 80px;
     width: 20%;
-}
-
-.transparent-arrow {
+  }
+  
+  .transparent-arrow {
     opacity: 0.3; /* Adjust the opacity value as needed */
+  }
+  
+  .table {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Optional: blur effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .table th,
+  .table td {
+    background-color: transparent !important;
+    border: 1px solid #ccc; /* Set border color to ensure it is visible */
+  }
+  
+  .table thead th {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the header */
+    color: white; /* Ensure text is visible */
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for odd rows */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for even rows */
   }
   
