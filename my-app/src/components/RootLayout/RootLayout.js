@@ -3,7 +3,7 @@ import { useNavigate, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Sidebar2 from '../Sidebar2/Sidebar2';
 import { FaBars, FaSignOutAlt } from 'react-icons/fa';
-import { resetState } from '../../redux/slice/workshopManagamentSlice';
+import { resetState } from '../../redux/Slice/WorkShopManagementSlice';
 import './RootLayout.css';
 
 function RootLayout() {

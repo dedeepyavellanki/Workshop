@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { workshopManagementLoginThunk } from '../../redux/slice/workshopManagamentSlice';
+import { workshopManagementLoginThunk } from '../../redux/Slice/WorkShopManagementSlice';
 import './Login.css';
 
 function Login() {
@@ -24,10 +24,11 @@ function Login() {
 
     useEffect(() => {
         if (loginUserStatus) {
-            navigate('/Admin');
-        }
-    }, [loginUserStatus, navigate]);
-
+            navigate("/Dashboard");
+          }
+        
+      }, [loginUserStatus]);
+    
     return (
         <div className="login-container">
             <div className="p-4 login-card">
