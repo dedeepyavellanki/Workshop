@@ -10,7 +10,7 @@ import './ManagePassword.css'
 function ManagePassword() {
     const token = localStorage.getItem('token');
     let {register,handleSubmit,formState:{errors}}=useForm()
-    let { loginUserStatus, currentUser } = useSelector(state => state.workshopManagementLoginReducer)
+    let { loginUserStatus, currentUser } = useSelector(state => state.workshopManagement)
     let [err,setErr] = useState('')
     let [suc,setSuc] = useState('')
     const [showPassword1, setShowPassword1] = useState(false);

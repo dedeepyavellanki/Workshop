@@ -94,20 +94,30 @@ adminApp.post('/workshopdata',expressAsyncHandler(async(req,res)=>{
 }))
 
 adminApp.get('/workshopdata/:id', expressAsyncHandler(async (req, res) => {
-    // Get adminId from the request parameters
-    const aid = req.params.id;
-
+    const aid = parseInt(req.params.id, 10); // Convert to number
+    console.log('Received ID:', aid); // Debugging
     try {
-        // Get all workshop data for the given adminId
-        let List = await workshopcollection.find({ workshopId: aid }).toArray();
-        
-        // Send response
-        res.send({ message: "List of data", payload: List });
+        let List = await workshopcollection.findOne({ workshopId: aid });
+        console.log('Query Result:', List); // Debugging
+        if (!List) {
+            return res.status(404).send({ message: "Workshop not found" });
+        }
+        res.send({ message: "Data found", payload: List });
     } catch (error) {
-        // Handle error
-        res.status(500).send({ message: "error", payload: error.message });
+        console.error('Error:', error); // Debugging
+        res.status(500).send({ message: "Error", payload: error.message });
     }
 }));
 
+
+// Get all workshop data
+adminApp.get('/all-workshops', expressAsyncHandler(async (req, res) => {
+    try {
+        let allWorkshops = await workshopcollection.find().toArray();
+        res.send({ message: "All workshops", payload: allWorkshops });
+    } catch (error) {
+        res.status(500).send({ message: "Error", payload: error.message });
+    }
+}));
 
 module.exports=adminApp

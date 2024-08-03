@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import Sidebar2 from '../Sidebar2/Sidebar2';
+import Sidebar2 from '../Sidebar2/Sidebar2'; // Ensure the path is correct
 import { FaBars, FaSignOutAlt } from 'react-icons/fa';
-import { resetState } from '../../redux/Slice/WorkShopManagementSlice';
+import { resetState } from '../../redux/Slice/WorkShopManagementSlice'; // Ensure the path is correct
 import './RootLayout.css';
 
 function RootLayout() {
-  const { loginUserStatus, currentUser } = useSelector((state) => state.user) || { loginUserStatus: false, currentUser: null };
+  const { loginUserStatus, currentUser } = useSelector((state) => state.workshopManagement) || { loginUserStatus: false, currentUser: null };
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ function RootLayout() {
   };
 
   useEffect(() => {
-    if (loginUserStatus === false) {
+    if (!loginUserStatus) {
       navigate('/login');
     } else if (currentUser && currentUser.userType === 'admin') {
       navigate('/admin');
@@ -32,7 +32,7 @@ function RootLayout() {
 
   return (
     <div>
-      {loginUserStatus === false ? (
+      {!loginUserStatus ? (
         <Outlet />
       ) : (
         <div>
@@ -41,10 +41,8 @@ function RootLayout() {
               <FaBars />
             </div>
             <div className='text-center mt-2'>
-                <h2><b>
-                    Workshop Management Module</b>
-                </h2>
-                </div>
+              <h2><b>Workshop Management Module</b></h2>
+            </div>
             <button className="logout-button" onClick={signOut}>
               <FaSignOutAlt />
               <span> </span>Logout

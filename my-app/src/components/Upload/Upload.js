@@ -10,44 +10,30 @@ function Upload() {
     const axiosWithToken = axios.create({
         headers: { Authorization: `Bearer ${token}` }
     });
-    let navigate = useNavigate();
-    let { currentUser } = useSelector(state => state.workshopManagementLoginReducer);
+    const navigate = useNavigate();
+    const { currentUser } = useSelector(state => state.workshopManagement);
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const generateWorkshopId = () => Math.floor(Math.random() * 1000000); // Adjust range as needed
 
     const onSubmit = async (data) => {
         data.dateOfCreation = new Date();
         data.dateOfModification = new Date();
         data.adminId = currentUser.adminID;
-        data.sdpId = Date.now();
-
-        // Handle file upload
-        const fileInput = document.getElementById('certificate');
-        const formData = new FormData();
-        formData.append('file', fileInput.files[0], `sdp-${data.sdpId}.jpeg`);
+        data.sdpId = Date.now(); // or use another method if needed
+        data.workshopId = generateWorkshopId();
 
         try {
-            const fileUploadRes = await axiosWithToken.post('http://localhost:5000/file-api/upload-certificate', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-
-            if (fileUploadRes.data.file) {
-                data.filePath = fileUploadRes.data.filePath;
-
-                // Proceed with the rest of the form data submission
-                let res = await axiosWithToken.post('http://localhost:5000/admin-api/sdpdata', data);
-                if (res.data.message === 'Data Uploaded') {
-                    alert('Upload Successful!');
-                    navigate('/Dashboard');
-                } else {
-                    alert(res.data.message);
-                }
+            // Directly submit form data
+            let res = await axiosWithToken.post('http://localhost:4000/admin-api/workshopdata', data);
+            if (res.data.message === 'Data Uploaded') {
+                alert('Upload Successful!');
+                navigate('/admin/Dashboard');
             } else {
-                alert('File uploaded successfully');
+                alert(res.data.message);
             }
         } catch (error) {
-            alert('File uploaded successfully');
+            alert('Error occurred during data submission');
         }
     };
 
@@ -58,16 +44,28 @@ function Upload() {
             </div>
             <div className="upsmain mt-5 mx-auto" >
                 <form className="bg-purple sdpForm mx-auto p-4 pt-3 rounded" style={{backgroundCImage:'https://help.nextcloud.com/uploads/default/original/3X/2/3/23cbcf8f59cdfda285a3a922b7677c0fa54f795b.jpeg'}} onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-group">
-                        <label htmlFor="title">Title</label>
-                        <input
-                            type="text"
-                            id="title"
-                            {...register('title', { required: true })}
-                            className="form-control w-100"
-                        />
-                        {errors.title && <span className="error">Title is required</span>}
-                    </div>
+                <div className="form-group">
+    <label htmlFor="title">Title</label>
+    <input
+        type="text"
+        id="title"
+        {...register('title', { required: true })}
+        className="form-control w-100"
+    />
+    {errors.title && <span className="error">Title is required</span>}
+</div>
+
+<div className="form-group">
+    <label htmlFor="location">Location</label>
+    <input
+        type="text"
+        id="location"
+        {...register('location', { required: true })}
+        className="form-control w-100"
+    />
+    {errors.location && <span className="error">Location is required</span>}
+</div>
+
                     <div className="form-group">
                         <label htmlFor="start-date">Start Date</label>
                         <input

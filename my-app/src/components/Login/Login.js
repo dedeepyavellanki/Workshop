@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { workshopManagementLoginThunk } from '../../redux/Slice/WorkShopManagementSlice';
@@ -11,7 +11,7 @@ function Login() {
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-    const { loginUserStatus = false, currentUser, errorOccured, errMsg } = useSelector((state) => state.workshopManagementLoginReducer) || {};
+    const { loginUserStatus, currentUser, errorOccurred, errMsg } = useSelector((state) => state.workshopManagement) || {};
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -24,11 +24,10 @@ function Login() {
 
     useEffect(() => {
         if (loginUserStatus) {
-            navigate("/Dashboard");
-          }
-        
-      }, [loginUserStatus]);
-    
+            navigate("/admin");
+        }
+    }, [loginUserStatus, navigate]);
+
     return (
         <div className="login-container">
             <div className="p-4 login-card">

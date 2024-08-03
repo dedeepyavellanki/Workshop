@@ -22,7 +22,7 @@ function App() {
       children: [
         {
           path: '',
-          element: <Dashboard /> // Redirect to Dashboard by default after login
+          element: <Login />
         },
         {
           path: 'login',
